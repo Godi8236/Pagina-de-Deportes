@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perico Deportes | El Portal Deportivo de Perico, Jujuy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         SECCIÓN 1: BANNER PRINCIPAL Y ENCABEZADO
+         ========================================== -->
+    <header class="main-header">
+        <!-- 
+            🖼️ BANNER PRINCIPAL SUPERIOR DE ARRIBA
+            ------------------------------------------------------------------
+            RUTA: img/banner-principal.jpg
+            MEDIDA RECOMENDADA EN PÍXELES: 1200 px (ancho) x 400 px (alto).
+            FORMATO RECOMENDADO: JPG o WEBP.
+            NOTA: En celulares se adaptará automáticamente sin deformarse.
+            ------------------------------------------------------------------
+        -->
+        <div class="top-banner-container">
+            <img src="img/banner-principal.jpg" alt="Banner Principal Perico Deportes" class="top-banner-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- Bloque visible por defecto mientras no agregues tu propia imagen en img/banner-principal.jpg -->
+            <div class="banner-placeholder">
+                <span>📍 Espacio para Banner Principal Ancho<br><small>(Recomendado: 1200x400 px - Coloca tu imagen en img/banner-principal.jpg)</small></span>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <div class="brand">
+                <!-- 
+                    🖼️ LOGO DE LA PÁGINA WEB
+                    ------------------------------------------------------------------
+                    RUTA: img/logo.png
+                    MEDIDA RECOMENDADA EN PÍXELES: 250 px (ancho) x 70 px (alto).
+                    FORMATO RECOMENDADO: PNG con fondo transparente o SVG.
+                    ------------------------------------------------------------------
+                -->
+                <a href="#" class="logo-link">
+                    <img src="img/logo.png" alt="Logo Perico Deportes" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <!-- Texto visible mientras no agregues tu logo en img/logo.png -->
+                    <span class="logo-text-fallback">⚽ PericoDeportes</span>
+                </a>
+            </div>
+            <p class="tagline">Toda la información del deporte periqueño en un solo lugar</p>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN 2: BARRA DE ÚLTIMO MOMENTO
+         ========================================== -->
+    <div class="breaking-news-bar">
+        <div class="breaking-news-container">
+            <span class="breaking-badge">⚠️ ÚLTIMO MOMENTO</span>
+            <p class="breaking-text">
+                <strong>ATENCIÓN:</strong> Suspendida la fecha 4 de la Liga Local por lluvia en la Cancha de San José. Se reprograma para la próxima semana.
+            </p>
+        </div>
+    </div>
+
+    <main class="main-container">
+
+        <!-- ==========================================
+             SECCIÓN 3: BOTONES DE FILTRO POR DEPORTE
+             ========================================== -->
+        <section class="filter-section">
+            <h2 class="section-title">Filtrar por Deporte</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-sport="todos">Todos</button>
+                <button class="filter-btn" data-sport="futbol">Fútbol</button>
+                <button class="filter-btn" data-sport="basquet">Básquet</button>
+                <button class="filter-btn" data-sport="voley">Vóley</button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 4: PRÓXIMOS PARTIDOS
+             ========================================== -->
+        <section class="matches-section">
+            <h2 class="section-title">Próximos Partidos</h2>
+            
+            <div class="matches-grid">
+                <!-- Partido 1: Fútbol -->
+                <article class="match-card" data-sport="futbol">
+                    <div class="match-header">
+                        <span class="sport-badge badge-futbol">Fútbol</span>
+                        <span class="league-name">Liga Jujeña - Fecha 5</span>
+                    </div>
+                    <div class="teams-container">
+                        <div class="team">
+                            <!-- 
+                                🖼️ ESCUDO EQUIPO LOCAL (Opcional):
+                                Ruta: img/escudo-talleres.png (Recomendado: 80x80 px)
+                            -->
+                            <span class="team-name">Talleres de Perico</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <!-- 
+                                🖼️ ESCUDO EQUIPO VISITANTE (Opcional):
+                                Ruta: img/escudo-zapla.png (Recomendado: 80x80 px)
+                            -->
+                            <span class="team-name">Altos Hornos Zapla</span>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <p class="detail-item">📅 <strong>Horario:</strong> Sábado - 16:30 hs</p>
+                        <p class="detail-item">📍 <strong>Cancha:</strong> Estadio Plinio Zabala (Perico)</p>
+                    </div>
+                </article>
+
+                <!-- Partido 2: Básquet -->
+                <article class="match-card" data-sport="basquet">
+                    <div class="match-header">
+                        <span class="sport-badge badge-basquet">Básquet</span>
+                        <span class="league-name">Torneo Comercial Perico</span>
+                    </div>
+                    <div class="teams-container">
+                        <div class="team">
+                            <span class="team-name">Club Santo Domingo</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <span class="team-name">C.A. Perico Básquet</span>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <p class="detail-item">📅 <strong>Horario:</strong> Viernes - 21:00 hs</p>
+                        <p class="detail-item">📍 <strong>Cancha:</strong> Microestadio Municipal</p>
+                    </div>
+                </article>
+
+                <!-- Partido 3: Vóley -->
+                <article class="match-card" data-sport="voley">
+                    <div class="match-header">
+                        <span class="sport-badge badge-voley">Vóley</span>
+                        <span class="league-name">Liga Departamental Femenina</span>
+                    </div>
+                    <div class="teams-container">
+                        <div class="team">
+                            <span class="team-name">Perico Vóley Club</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <span class="team-name">Gorriti Vóley</span>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <p class="detail-item">📅 <strong>Horario:</strong> Domingo - 18:00 hs</p>
+                        <p class="detail-item">📍 <strong>Cancha:</strong> Complejo La Estación</p>
+                    </div>
+                </article>
+
+                <!-- Partido 4: Fútbol -->
+                <article class="match-card" data-sport="futbol">
+                    <div class="match-header">
+                        <span class="sport-badge badge-futbol">Fútbol</span>
+                        <span class="league-name">Liga Comercial Cancha San José</span>
+                    </div>
+                    <div class="teams-container">
+                        <div class="team">
+                            <span class="team-name">Deportivo El Carmen</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <span class="team-name">Los Lapachos FC</span>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <p class="detail-item">📅 <strong>Horario:</strong> Domingo - 10:30 hs</p>
+                        <p class="detail-item">📍 <strong>Cancha:</strong> Predio San José, Cancha 2</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 5: TABLA DE POSICIONES DE EJEMPLO
+             ========================================== -->
+        <section class="standings-section">
+            <h2 class="section-title">Tabla de Posiciones - Fútbol Local</h2>
+            
+            <div class="table-responsive">
+                <table class="standings-table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th class="text-left">Equipo</th>
+                            <th>PJ</th>
+                            <th>PG</th>
+                            <th>PE</th>
+                            <th>PP</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pos pos-1">1</td>
+                            <td class="team-cell"><strong>Talleres de Perico</strong></td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td><strong>10</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="pos pos-2">2</td>
+                            <td class="team-cell">Deportivo Santo Domingo</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td><strong>9</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="pos pos-3">3</td>
+                            <td class="team-cell">San José FC</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><strong>7</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="pos">4</td>
+                            <td class="team-cell">Los Lapachos FC</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td><strong>4</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="pos">5</td>
+                            <td class="team-cell">La Estación de Perico</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 6: BOLSA DE JUGADORES
+             ========================================== -->
+        <section class="players-market-section">
+            <div class="section-header-market">
+                <h2 class="section-title">Bolsa de Jugadores</h2>
+                <p class="section-subtitle">¿Tu equipo necesita refuerzos para cerrar la lista de buena fe?</p>
+            </div>
+
+            <div class="market-grid">
+                <!-- Aviso 1 -->
+                <article class="market-card">
+                    <div class="market-tag">Fútbol 8</div>
+                    <h3 class="market-title">Deportivo Santo Domingo busca Arquero y Defensor</h3>
+                    <p class="market-description">
+                        Buscamos arquero con experiencia y defensor central para disputar el Torneo Nocturno de Perico. Próximos a cerrar lista de buena fe este viernes.
+                    </p>
+                    <div class="market-meta">
+                        <span>📍 Perico, Jujuy</span>
+                        <span>⚡ Cierre Inminente</span>
+                    </div>
+                    <!-- 
+                        📱 BOTÓN DE CONTACTO A WHATSAPP DIRECTO:
+                        Reemplaza '5493881234567' por el número real con código de país (549) + código de área de Jujuy (388) + número.
+                    -->
+                    <a href="https://wa.me/5493881234567?text=Hola!%20Vi%20el%20aviso%20en%20PericoDeportes%20y%20quiero%20sumarme%20como%20jugador." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-whatsapp">
+                        <span>💬 Contactar por WhatsApp</span>
+                    </a>
+                </article>
+
+                <!-- Aviso 2 -->
+                <article class="market-card">
+                    <div class="market-tag">Vóley Mayores</div>
+                    <h3 class="market-title">Perico Vóley Club busca Armador/a</h3>
+                    <p class="market-description">
+                        Sumamos armador/a para la categoría Mayores de cara al Torneo Clausura. Entrenamientos martes y jueves por la noche en el Complejo Municipal.
+                    </p>
+                    <div class="market-meta">
+                        <span>📍 Complejo Municipal</span>
+                        <span>⚡ Cupo Limitado</span>
+                    </div>
+                    <a href="https://wa.me/5493887654321?text=Hola!%20Vi%20el%20aviso%20en%20PericoDeportes%20para%20el%20equipo%20de%20V%C3%B3ley." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-whatsapp">
+                        <span>💬 Contactar por WhatsApp</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER DE LA PÁGINA -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p><strong>Perico Deportes</strong> - El portal deportivo de la ciudad de Perico, Jujuy</p>
+            <p class="footer-copy">&copy; 2026 - Diseñado con arquitectura Mobile-First (HTML5 + CSS3 + JS puro)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+/* ==========================================================================
+   PERICO DEPORTES - ESTILOS CSS3 PURO (MOBILE-FIRST)
+   ==========================================================================
+   Diseñado principalmente para adaptarse a pantallas de celulares primero.
+   Usa variables CSS al inicio (:root) para cambiar colores fácilmente.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE COLOR Y DISEÑO
+   -------------------------------------------------------------------------- */
+:root {
+    --color-primary: #0a5c36;         /* Verde deportivo institucional */
+    --color-primary-dark: #053b22;    /* Verde oscuro */
+    --color-accent: #f4c430;          /* Amarillo / Dorado de acento */
+    --color-bg: #f4f6f8;              /* Gris muy claro de fondo */
+    --color-card-bg: #ffffff;         /* Fondo blanco para tarjetas */
+    --color-text: #222222;            /* Texto principal */
+    --color-text-muted: #666666;      /* Texto secundario / suave */
+    --color-border: #e2e8f0;          /* Bordes de tarjetas */
+
+    /* Colores por Deporte */
+    --color-futbol: #10b981;          /* Verde Fútbol */
+    --color-basquet: #f97316;         /* Naranja Básquet */
+    --color-voley: #06b6d4;           /* Celeste Vóley */
+
+    /* WhatsApp */
+    --color-whatsapp: #25d366;
+    --color-whatsapp-hover: #1eaa53;
+
+    --radius: 12px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.25s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y ESTILOS BASE
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Contenedor Principal con márgenes en celular */
+.main-container {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin-top: 4px;
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. ENCABEZADO Y BANNER PRINCIPAL
+   -------------------------------------------------------------------------- */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+   🖼️ GUÍA DE MEDIDAS PARA EL BANNER PRINCIPAL:
+   --------------------------------------------------------------------------
+   - Ubicación del archivo: img/banner-principal.jpg
+   - Medida óptima de diseño: 1200 píxeles (ancho) x 400 píxeles (alto).
+   - Proporción ideal: 3:1 o 4:1.
+   - Formato sugerido: JPG o WEBP comprimido.
+   - En celulares se ajustará automáticamente el alto sin deformar la imagen.
+   --------------------------------------------------------------------------
+*/
+.top-banner-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #1e293b;
+    position: relative;
+}
+
+.top-banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* En móvil se limita para no tapar toda la pantalla */
+    object-fit: cover;
+    display: block;
+}
+
+/* Caja gris/verde de repuesto que se ve cuando no has puesto la imagen aún */
+.banner-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: linear-gradient(135deg, #0a5c36 0%, #053b22 100%);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.95rem;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.header-content {
+    padding: 16px;
+    text-align: center;
+}
+
+/* 
+   🖼️ GUÍA DE MEDIDAS PARA EL LOGO:
+   --------------------------------------------------------------------------
+   - Ubicación del archivo: img/logo.png
+   - Medida óptima de diseño: 250 píxeles (ancho) x 70 píxeles (alto).
+   - Formato sugerido: PNG transparente o SVG.
+   --------------------------------------------------------------------------
+*/
+.logo-img {
+    max-height: 55px;
+    width: auto;
+}
+
+.logo-text-fallback {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   4. BARRA DE ÚLTIMO MOMENTO (ALERTAS)
+   -------------------------------------------------------------------------- */
+.breaking-news-bar {
+    background-color: #fef2f2;
+    border-top: 2px solid #ef4444;
+    border-bottom: 2px solid #ef4444;
+    padding: 10px 16px;
+}
+
+.breaking-news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.breaking-badge {
+    align-self: flex-start;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.breaking-text {
+    font-size: 0.88rem;
+    color: #991b1b;
+}
+
+/* --------------------------------------------------------------------------
+   5. PESTAÑAS / BOTONES DE FILTRO DE DEPORTES
+   -------------------------------------------------------------------------- */
+.filter-section {
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    /* Permite un desplazamiento suave con el dedo en teléfonos */
+    -webkit-overflow-scrolling: touch;
+}
+
+.filter-btn {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    border: 1px solid var(--color-border);
+    background-color: #ffffff;
+    color: var(--color-text);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    /* Tamaño cómodo para la yema del dedo en pantalla táctil */
+    min-height: 42px;
+}
+
+.filter-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 6px rgba(10, 92, 54, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   6. TARJETAS DE PRÓXIMOS PARTIDOS
+   -------------------------------------------------------------------------- */
+.matches-section {
+    margin-bottom: 32px;
+}
+
+.matches-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.match-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.match-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.sport-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.badge-futbol { background-color: var(--color-futbol); }
+.badge-basquet { background-color: var(--color-basquet); }
+.badge-voley { background-color: var(--color-voley); }
+
+.league-name {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.teams-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 0;
+    text-align: center;
+}
+
+.team {
+    flex: 1;
+}
+
+.team-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--color-text);
+    display: block;
+}
+
+.vs {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #94a3b8;
+    padding: 6px 10px;
+    background-color: #f8fafc;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+
+.match-details {
+    background-color: #f8fafc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.detail-item {
+    margin-bottom: 4px;
+    color: #334155;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. TABLA DE POSICIONES (ADAPTADA A DISPOSITIVOS MÓVILES)
+   -------------------------------------------------------------------------- */
+.standings-section {
+    margin-bottom: 32px;
+}
+
+/* En celulares permite desplazar horizontalmente si la pantalla es muy chica */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: center;
+    min-width: 320px;
+}
+
+.standings-table th {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 12px 10px;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.standings-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.standings-table tr:last-child td {
+    border-bottom: none;
+}
+
+.standings-table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.team-cell {
+    text-align: left;
+    font-weight: 500;
+}
+
+.pos {
+    font-weight: bold;
+}
+.pos-1 { color: #d97706; } /* 1° Puesto - Oro */
+.pos-2 { color: #64748b; } /* 2° Puesto - Plata */
+.pos-3 { color: #b45309; } /* 3° Puesto - Bronce */
+
+/* --------------------------------------------------------------------------
+   8. BOLSA DE JUGADORES Y BOTÓN DIRECTO DE WHATSAPP
+   -------------------------------------------------------------------------- */
+.players-market-section {
+    margin-bottom: 32px;
+}
+
+.section-header-market {
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin-top: -6px;
+}
+
+.market-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.market-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    position: relative;
+    border-left: 5px solid var(--color-accent);
+}
+
+.market-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: #e2e8f0;
+    color: #334155;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.market-title {
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+}
+
+.market-description {
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.market-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+/* Botón directo para iniciar chat de WhatsApp */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-whatsapp);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover, .btn-whatsapp:active {
+    background-color: var(--color-whatsapp-hover);
+    transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   9. PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+.main-footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-footer strong {
+    color: #ffffff;
+}
+
+.footer-copy {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (MEJORAS PARA TABLETS Y COMPUTADORAS)
+   ========================================================================== */
+
+/* Tablets (pantallas de 768px en adelante) */
+@media (min-width: 768px) {
+    .breaking-news-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .matches-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .market-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .top-banner-img {
+        max-height: 300px;
+    }
+}
+
+/* Computadoras (pantallas de 1024px en adelante) */
+@media (min-width: 1024px) {
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+    }
+
+    .tagline {
+        margin-top: 0;
+        font-size: 0.95rem;
+    }
+
+    .top-banner-img {
+        max-height: 400px;
+    }
+}
